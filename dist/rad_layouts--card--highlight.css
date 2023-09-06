@@ -1,0 +1,26 @@
+.rad-card--highlight {
+  display: grid;
+  grid:
+    'one'
+    'two'
+    'three' / minmax(0, 1fr);
+  grid-gap: 10px;
+  grid-gap: 1rem;
+}
+
+.rad-card--highlight__one {
+  grid-area: one;
+}
+
+.rad-card--highlight__one img {
+  display: block;
+  max-width: 100%;
+}
+
+.rad-card--highlight__two {
+  grid-area: two;
+}
+
+.rad-card--highlight__three {
+  grid-area: three;
+}

@@ -1,0 +1,44 @@
+/* Layout Paragraphs styles */
+
+.rad-auto-flow .lpb-btn--add.before {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15px;
+}
+
+.rad-auto-flow .lpb-btn--add.after {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -15px;
+  bottom: unset;
+  left: unset;
+}
+
+
+
+
+.rad-auto-flow {
+
+}
+
+@media (min-width: 768px) {
+  .rad-auto-flow__main {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .desktop-num-columns--2 .rad-auto-flow__main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .desktop-num-columns--3 .rad-auto-flow__main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .desktop-num-columns--4 .rad-auto-flow__main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

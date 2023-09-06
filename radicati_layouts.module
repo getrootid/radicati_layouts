@@ -1,0 +1,8 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+// TODO: Can't remember what this is for.
+//function radicati_layouts_layout_paragraph_element_form_alter(array &$element_form, FormStateInterface &$element_form_state, array $parent_form) {
+//  $element_form['layout_plugin_form']['#type'] = 'container';
+//}

@@ -1,0 +1,26 @@
+{% if content %}
+  {% set classes = [
+    'rad-layout',
+    "rad-four-column",
+    settings.layout_width
+  ] %}
+
+  {% if settings.layout_classes is not empty %}
+    {% set classes = classes|merge(settings.layout_classes|split(' ')) %}
+  {% endif %}
+
+  <div {{ attributes.addClass(classes).setAttribute('id', settings.layout_id) }}>
+    <div {{ region_attributes.one.addClass(["rad-four-column__one", 'rad-column']) }}>
+      {{ content.one }}
+    </div>
+    <div {{ region_attributes.two.addClass(["rad-four-column__two", 'rad-column']) }}>
+      {{ content.two }}
+    </div>
+    <div {{ region_attributes.three.addClass(["rad-four-column__three", 'rad-column']) }}>
+      {{ content.three }}
+    </div>
+    <div {{ region_attributes.four.addClass(["rad-four-column__four", 'rad-column']) }}>
+      {{ content.four }}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,23 @@
+{% if content %}
+  {% set classes = [
+    "rad-card--horizontal",
+    settings.layout_width
+  ] %}
+
+  {% if settings.layout_classes is not empty %}
+    {% set classes = classes|merge(settings.layout_classes|split(' ')) %}
+  {% endif %}
+
+  <div {{ attributes.addClass(classes).setAttribute('id', settings.layout_id) }}>
+    {% if content.one is not empty %}
+      <div {{ region_attributes.one.addClass("rad-card--horizontal__one") }}>
+        {{ content.one }}
+      </div>
+    {% endif %}
+    {% if content.two is not empty %}
+      <div {{ region_attributes.two.addClass("rad-card--horizontal__two") }}>
+        {{ content.two }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

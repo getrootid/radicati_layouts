@@ -1,0 +1,30 @@
+.rad-card--horizontal {
+  display: grid;
+  /* grid:
+    "one"
+    "two" / auto; */
+  grid: 'one two' / 120px minmax(0, 1fr);
+  grid: 'one two' / 12rem minmax(0, 1fr);
+  grid-gap: 10px;
+  grid-gap: 1rem;
+}
+
+/* @media (min-width: 36em) {
+  .rad-card--horizontal {
+    grid: "one two" / 120px auto;
+    grid: "one two" / 12rem auto;
+  }
+} */
+
+.rad-card--horizontal__one {
+  grid-area: one;
+}
+
+.rad-card--horizontal__one img {
+  display: block;
+  max-width: 100%;
+}
+
+.rad-card--horizontal__two {
+  grid-area: two;
+}

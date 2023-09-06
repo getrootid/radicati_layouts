@@ -1,0 +1,93 @@
+base:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts.css: { preprocess: false }
+
+one-col:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--one-col.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+two-col:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--two-col.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+three-col:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--three-col.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+four-col:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--four-col.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+auto-flow:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--auto-flow.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+two-three-grid:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--two-three-grid.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+card-featured-highlight:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--card--featured-highlight.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+card-highlight:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--card--highlight.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+card-horizontal:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--card--horizontal.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+card-image-background:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--card--image-background.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base
+
+card-vertical:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--card--vertical.css: { preprocess: false }
+  requirements:
+    - radicati_layouts/base

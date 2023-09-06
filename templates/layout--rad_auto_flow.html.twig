@@ -1,0 +1,17 @@
+{% if content %}
+  {% set classes = [
+    "rad-auto-flow",
+    settings.layout_width,
+    "desktop-num-columns--" ~ settings.desktop_items_across
+  ] %}
+
+  {% if settings.layout_classes is not empty %}
+    {% set classes = classes|merge(settings.layout_classes|split(' ')) %}
+  {% endif %}
+
+<div {{ attributes.addClass(classes).setAttribute('id', settings.layout_id) }}>
+  <div {{ region_attributes.one.addClass("rad-auto-flow__main") }}>
+    {{ content.one }}
+  </div>
+</div>
+{% endif %}

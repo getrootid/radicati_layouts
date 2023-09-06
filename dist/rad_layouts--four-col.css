@@ -1,0 +1,17 @@
+.rad-four-column {
+
+}
+
+@media (min-width: 768px) {
+  .rad-four-column {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .rad-four-column {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

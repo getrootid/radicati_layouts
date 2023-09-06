@@ -1,0 +1,22 @@
+{% if content %}
+  {% set classes = [
+    "rad-three-column",
+    settings.layout_width
+  ] %}
+
+  {% if settings.layout_classes is not empty %}
+    {% set classes = classes|merge(settings.layout_classes|split(' ')) %}
+  {% endif %}
+
+  <div {{ attributes.addClass(classes).setAttribute('id', settings.layout_id) }}>
+    <div {{ region_attributes.one.addClass("rad-four-column__one") }}>
+      {{ content.one }}
+    </div>
+    <div {{ region_attributes.two.addClass("rad-four-column__two") }}>
+      {{ content.two }}
+    </div>
+    <div {{ region_attributes.three.addClass("rad-four-column__three") }}>
+      {{ content.three }}
+    </div>
+  </div>
+{% endif %}

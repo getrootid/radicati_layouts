@@ -1,0 +1,17 @@
+.rad-two-column {
+
+}
+
+@media (min-width: 768px) {
+  .rad-two-column {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .rad-two-column {
+
+  }
+}
