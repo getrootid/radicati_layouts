@@ -1,0 +1,13 @@
+{
+  "name": "getrootid/radicati_layouts",
+  "description": "Drupal module with basic layouts commonly used in Radicati Drupal themes",
+  "type": "drupal-module",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Meg Claypool",
+      "email": "meg@rootid.com"
+    }
+  ],
+  "require": {}
+}
