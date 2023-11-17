@@ -11,6 +11,19 @@ rad_single_column:
     one:
       label: Main content
 
+jm_single_column:
+  label: "Columns: 1"
+  category: "Radicati"
+  class: '\Drupal\radicati_layouts\Plugin\Layout\RadSingleColumnLayout'
+  template: templates/layout--rad_single_column
+  library: radicati_layouts/one-col
+  default_region: one
+  icon_map:
+    - ["one"]
+  regions:
+    one:
+      label: Main content
+
 rad_two_column:
   label: "Columns: 2"
   category: "Radicati"

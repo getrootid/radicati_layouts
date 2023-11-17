@@ -1,0 +1,35 @@
+.layout-width--full {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.layout-width--narrow {
+  width: var(--rad--content-width-narrow);
+
+  margin-left: calc(50% - var(--rad--content-width-narrow) / 2);
+  margin-right: calc(50% - var(--rad--content-width-narrow) / 2);
+}
+
+.layout-width--wide {
+  width: var(--rad--content-width-wide);
+
+  margin-left: calc(50% - var(--rad--content-width-wide) / 2);
+  margin-right: calc(50% - var(--rad--content-width-wide) / 2);
+}
+
+
+.layout-width--full.layout-inner-width--narrow > * {
+  max-width: var(--rad--content-width-narrow);
+  margin: 0 auto;
+}
+
+.layout-width--full.layout-inner-width--normal > * {
+  max-width: var(--rad--content-width-normal);
+  margin: 0 auto;
+}
+
+.layout-width--full.layout-inner-width--wide > * {
+  max-width: var(--rad--content-width-wide);
+  margin: 0 auto;
+}

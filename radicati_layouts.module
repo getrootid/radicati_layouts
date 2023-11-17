@@ -1,8 +1,57 @@
 <?php
 
-use Drupal\Core\Form\FormStateInterface;
+/**
+ * This is a large module meant to serve as the base of Radicati sites
+ * use of Layout Builder. This module will define layouts, remove default layouts,
+ * remove unused blocks, and provide any other code meant to help the Layout Builder
+ * user experience.
+ */
 
-// TODO: Can't remember what this is for.
-//function radicati_layouts_layout_paragraph_element_form_alter(array &$element_form, FormStateInterface &$element_form_state, array $parent_form) {
-//  $element_form['layout_plugin_form']['#type'] = 'container';
-//}
+
+/**
+ * Implements hook_plugin_filter_block__layout_builder_alter()
+ *
+ * Removes many default blocks that shouldn't be used in LB.
+ */
+function radicati_layouts_plugin_filter_block__layout_builder_alter(array &$blocks) {
+  // Remove the default "Powered by Drupal" block.
+  unset($blocks['system_powered_by_block']);
+  unset($blocks['whois_online_block']);
+  unset($blocks['local_actions_block']);
+  unset($blocks['local_tasks_block']);
+
+  unset($blocks['field_block:node:layout_page:vid']);
+  unset($blocks['field_block:node:layout_page:langcode']);
+  unset($blocks['field_block:node:layout_page:revision_timestamp']);
+  unset($blocks['field_block:node:layout_page:revision_uid']);
+  unset($blocks['field_block:node:layout_page:revision_log']);
+  unset($blocks['field_block:node:layout_page:uid']);
+  unset($blocks['field_block:node:layout_page:sticky']);
+  unset($blocks['field_block:node:layout_page:default_langcode']);
+  unset($blocks['field_block:node:layout_page:revision_default']);
+  unset($blocks['field_block:node:layout_page:revision_translation_affected']);
+  unset($blocks['extra_field_block:node:layout_page:links']);
+
+  unset($blocks['field_block:user:user:uid']);
+  unset($blocks['field_block:user:user:langcode']);
+  unset($blocks['field_block:user:user:preferred_langcode']);
+  unset($blocks['field_block:user:user:preferred_admin_langcode']);
+  unset($blocks['field_block:user:user:name']);
+  unset($blocks['field_block:user:user:mail']);
+  unset($blocks['field_block:user:user:timezone']);
+  unset($blocks['field_block:user:user:status']);
+  unset($blocks['field_block:user:user:created']);
+  unset($blocks['field_block:user:user:changed']);
+  unset($blocks['field_block:user:user:access']);
+  unset($blocks['field_block:user:user:login']);
+  unset($blocks['field_block:user:user:init']);
+  unset($blocks['field_block:user:user:roles']);
+  unset($blocks['field_block:user:user:default_langcode']);
+  unset($blocks['field_block:user:user:user_picture']);
+  unset($blocks['extra_field_block:user:user:member_for']);
+  unset($blocks['extra_field_block:user:user:search_api_excerpt']);
+}
+
+function radicati_layouts_plugin_filter_layout__layout_builder_alter(array &$definitions, $extra) {
+
+}
