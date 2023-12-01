@@ -8,6 +8,14 @@
  */
 
 
+function radicati_layouts_plugin_filter_layout__layout_builder_alter(array &$definitions, array $extra) {
+
+  unset($definitions['layout_onecol']);
+  unset($definitions['layout_twocol_section']);
+  unset($definitions['layout_threecol_section']);
+  unset($definitions['layout_fourcol_section']);
+}
+
 /**
  * Implements hook_plugin_filter_block__layout_builder_alter()
  *
@@ -15,6 +23,10 @@
  */
 function radicati_layouts_plugin_filter_block__layout_builder_alter(array &$blocks) {
   // Remove the default "Powered by Drupal" block.
+  unset($blocks['entity_view:content']);
+  unset($blocks['entity_view:user']);
+
+
   unset($blocks['system_powered_by_block']);
   unset($blocks['whois_online_block']);
   unset($blocks['local_actions_block']);
@@ -50,8 +62,4 @@ function radicati_layouts_plugin_filter_block__layout_builder_alter(array &$bloc
   unset($blocks['field_block:user:user:user_picture']);
   unset($blocks['extra_field_block:user:user:member_for']);
   unset($blocks['extra_field_block:user:user:search_api_excerpt']);
-}
-
-function radicati_layouts_plugin_filter_layout__layout_builder_alter(array &$definitions, $extra) {
-
 }
