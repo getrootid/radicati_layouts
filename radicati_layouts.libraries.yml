@@ -35,19 +35,3 @@ four-col:
       dist/rad_layouts--four-col.css: { preprocess: false }
   dependencies:
     - radicati_layouts/base
-
-auto-flow:
-  version: 4.x
-  css:
-    theme:
-      dist/rad_layouts--auto-flow.css: { preprocess: false }
-  dependencies:
-    - radicati_layouts/base
-
-two-three-grid:
-  version: 4.x
-  css:
-    theme:
-      dist/rad_layouts--two-three-grid.css: { preprocess: false }
-  dependencies:
-    - radicati_layouts/base
