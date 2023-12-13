@@ -28,15 +28,9 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
     // Load the taxonomy term children of the term Background, in the settings vocab (term 13)
     // and put them in an array to use as options for a select list.
     $vid = 'settings';
-    $tid = 13;
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $tid, NULL, TRUE);
-    $backgrounds = [];
-    foreach ($terms as $term) {
-      $key = $term->get('field_setting_class')->value;
-      if(!empty($key)) {
-        $backgrounds[$key] = $term->name->value;
-      }
-    }
+    $background_parent_uuid = "646cf295-d9f5-4a69-bf42-6f362249d7e5";
+    // Get taxonomy term from uuid.
+    $background_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['uuid' => $background_parent_uuid]);
 
     $form['layout_width'] = [
       '#type' => 'select',
@@ -73,13 +67,26 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
       ],
     ];
 
-    $form['layout_background'] = [
-      '#type' => 'radios',
-      '#title' => $this->t('Background'),
-      '#description' => $this->t('What background should this layout have?'),
-      '#default_value' => $configuration['layout_background'],
-      '#options' => $backgrounds
-    ];
+    if(!empty($background_term)) {
+      $background_term = reset($background_term);
+      $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $background_term->id(), NULL, TRUE);
+      $backgrounds = [];
+      foreach ($terms as $term) {
+        $key = $term->get('field_setting_class')->value;
+        if(!empty($key)) {
+          $backgrounds[$key] = $term->name->value;
+        }
+      }
+
+      $form['layout_background'] = [
+        '#type' => 'radios',
+        '#title' => $this->t('Background'),
+        '#description' => $this->t('What background should this layout have?'),
+        '#default_value' => $configuration['layout_background'],
+        '#options' => $backgrounds
+      ];
+    }
+
 
     $form['has_grid_gaps'] = [
       '#type' => 'checkbox',
