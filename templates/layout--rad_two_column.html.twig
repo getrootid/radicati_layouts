@@ -12,12 +12,14 @@
   {% endif %}
 
   <div {{ attributes.addClass(classes).setAttribute('id', settings.layout_id) }}>
-    <div {{ region_attributes.one.addClass("rad-two-column__left", settings.layout_type == 'left_sidebar' ? 'rad-two-column--sidebar' : 'rad-two-column--content') }}>
-      {{ content.one }}
-    </div>
+    <div class="rad-columns__wrapper">
+      <div {{ region_attributes.one.addClass("rad-two-column__left", settings.layout_type == 'left_sidebar' ? 'rad-two-column--sidebar' : 'rad-two-column--content') }}>
+        {{ content.one }}
+      </div>
 
-    <div {{ region_attributes.two.addClass(["rad-two-column__right", settings.layout_type == 'right_sidebar' ? 'rad-two-column--sidebar' : 'rad-two-column--content']) }}>
-      {{ content.two }}
+      <div {{ region_attributes.two.addClass(["rad-two-column__right", settings.layout_type == 'right_sidebar' ? 'rad-two-column--sidebar' : 'rad-two-column--content']) }}>
+        {{ content.two }}
+      </div>
     </div>
   </div>
 {% endif %}

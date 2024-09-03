@@ -7,7 +7,8 @@ These styles are meant to be a starting point and to be overridden in the site t
 }
 
 /* sidebar specific styles */
-.rad-two-column--left_sidebar, .rad-two-column--right_sidebar {
+.rad-two-column--left_sidebar .rad-columns__wrapper,
+.rad-two-column--right_sidebar .rad-columns__wrapper {
   display: grid;
   grid-gap: 1em;
   grid-template-areas:
@@ -27,26 +28,26 @@ These styles are meant to be a starting point and to be overridden in the site t
 }
 
 @media (min-width: 768px) {
-  .rad-two-column--left_sidebar {
+  .rad-two-column--left_sidebar .rad-columns__wrapper {
     grid-template-areas: "sidebar content";
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
   }
 
-  .rad-two-column--right_sidebar {
+  .rad-two-column--right_sidebar .rad-columns__wrapper {
     grid-template-areas: "content sidebar";
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
   }
 }
 
 @media (min-width: 992px) {
-  .rad-two-column--left_sidebar {
+  .rad-two-column--left_sidebar .rad-columns__wrapper {
     grid-template-areas: "sidebar content";
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
   }
 
-  .rad-two-column--right_sidebar {
+  .rad-two-column--right_sidebar .rad-columns__wrapper {
     grid-template-areas: "content sidebar";
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
   }
 }
 

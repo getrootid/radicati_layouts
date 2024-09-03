@@ -35,3 +35,9 @@ four-col:
       dist/rad_layouts--four-col.css: { preprocess: false }
   dependencies:
     - radicati_layouts/base
+
+rad-sticky:
+  version: 1.x
+  css:
+    theme:
+      dist/rad_sticky.css: { preprocess: false }

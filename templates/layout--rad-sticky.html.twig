@@ -1,6 +1,6 @@
 {% if content %}
   {% set classes = [
-    "rad-single-column",
+    "rad-sticky",
     settings.layout_width,
     settings.layout_inner_width,
     settings.layout_background,
@@ -11,10 +11,12 @@
   {% endif %}
 
   <div {{ attributes.addClass(classes).setAttribute('id', settings.layout_id) }}>
-    <div class="rad-columns__wrapper">
-      <div {{ region_attributes.one.addClass("rad-single-column__main") }}>
-        {{ content.one }}
+    {% if content.main %}
+      <div class="rad-columns__wrapper">
+        <div {{ region_attributes.main.addClass('main-region') }}>
+          {{ content.main }}
+        </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 {% endif %}

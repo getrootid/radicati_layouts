@@ -62,3 +62,16 @@ rad_four_column:
       label: Three
     four:
       label: Four
+
+rad_sticky:
+  label: Sticky Section
+  category: radicati
+  class: '\Drupal\radicati_layouts\Plugin\Layout\RadStickyLayout'
+  template: templates/layout--rad-sticky
+  library: radicati_layouts/rad-sticky
+  default_region: main
+  icon_map:
+    - [ "main" ]
+  regions:
+    main:
+      label: Main content
