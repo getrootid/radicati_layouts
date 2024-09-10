@@ -1,3 +1,13 @@
+:root {
+  --rad--grid-gap: 1rem;
+}
+
+.rad-columns__wrapper--has-grid-gaps {
+  
+  grid-gap: var(--rad--grid-gap);
+}
+
+
 /*.layout-width--full {*/
 /*  width: 100vw;*/
 /*  margin-left: calc(50% - 50vw);*/

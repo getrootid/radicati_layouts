@@ -27,7 +27,8 @@ class RadTwoColumnLayout extends RadLayoutBase {
         'left_sidebar' => $this->t('Left Sidebar'),
         'right_sidebar' => $this->t('Right Sidebar'),
         'half_half' => $this->t('50/50')
-      ]
+      ],
+      '#weight' => -1,
     ];
 
     return $form;

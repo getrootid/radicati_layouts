@@ -12,7 +12,7 @@
   {% endif %}
 
   <div {{ attributes.addClass(classes).setAttribute('id', settings.layout_id) }}>
-    <div class="rad-columns__wrapper">
+    <div class="rad-columns__wrapper {{ settings.has_grid_gaps ?? "rad-columns__wrapper--has-grid-gaps" }}">
       <div {{ region_attributes.one.addClass("rad-two-column__left", settings.layout_type == 'left_sidebar' ? 'rad-two-column--sidebar' : 'rad-two-column--content') }}>
         {{ content.one }}
       </div>

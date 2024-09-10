@@ -45,7 +45,8 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
       ],
       '#attributes' => [
         'id' => 'layout-width',
-      ]
+      ],
+      '#weight' => -20,
     ];
 
     // Inner with is only used in when layout-width--full is selected above.
@@ -65,6 +66,7 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
           ':input[id="layout-width"]' => ['value' => 'layout-width--full'],
         ],
       ],
+      '#weight' => -15,
     ];
 
     if(!empty($background_term)) {
@@ -83,7 +85,8 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
         '#title' => $this->t('Background'),
         '#description' => $this->t('What background should this layout have?'),
         '#default_value' => $configuration['layout_background'],
-        '#options' => $backgrounds
+        '#options' => $backgrounds,
+        '#weight' => -10,
       ];
     }
 
@@ -92,21 +95,24 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
       '#type' => 'checkbox',
       '#title' => $this->t('Has Grid Gaps'),
       '#description' => $this->t('If using a grid inside this container, should it have gaps between the columns?'),
-      '#default_value' => $configuration['has_grid_gaps']
+      '#default_value' => $configuration['has_grid_gaps'],
+      '#weight' => -5,
     ];
 
     $form['layout_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Section ID'),
       '#description' => $this->t('This can be used for the target of an anchor tag, and can be directly linked to.'),
-      '#default_value' => $configuration['layout_id']
+      '#default_value' => $configuration['layout_id'],
+      '#weight' => 0,
     ];
 
     $form['layout_classes'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Section Classes'),
       '#description' => $this->t('Classes that can be used for styling.'),
-      '#default_value' => $configuration['layout_classes']
+      '#default_value' => $configuration['layout_classes'],
+      '#weight' => 0,
     ];
 
     return $form;
