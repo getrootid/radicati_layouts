@@ -26,6 +26,27 @@ rad_two_column:
     two:
       label: Two
 
+rad_stacked_two_column:
+  label: "Stacked Columns: 2"
+  category: "Radicati"
+  class: '\Drupal\radicati_layouts\Plugin\Layout\RadTwoColumnStackedLayout'
+  template: templates/layout--rad_stacked_two_column
+  library: radicati_layouts/stacked-two-col
+  default_region: one
+  icon_map:
+    - ["top"]
+    - ["one", "two"]
+    - ["bottom"]
+  regions:
+    top:
+      label: Top
+    one:
+      label: One
+    two:
+      label: Two
+    bottom:
+      label: Bottom
+
 rad_three_column:
   label: "Columns: 3"
   category: "Radicati"

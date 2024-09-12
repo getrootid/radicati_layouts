@@ -1,6 +1,7 @@
 {% if content %}
   {% set classes = [
-    "rad-three-column",
+    'rad-layout',
+    "rad-two-column--stacked",
     settings.layout_width,
     settings.layout_inner_width,
   ] %}
@@ -11,14 +12,17 @@
 
   <div {{ attributes.addClass(classes).setAttribute('id', settings.layout_id) }}>
     <div class="rad-columns__wrapper">
-      <div {{ region_attributes.one.addClass("rad-four-column__one") }}>
+      <div {{ region_attributes.top.addClass(["rad-two-column__top", 'rad-column']) }}>
+        {{ content.top }}
+      </div>
+      <div {{ region_attributes.one.addClass(["rad-two-column__one", 'rad-column']) }}>
         {{ content.one }}
       </div>
-      <div {{ region_attributes.two.addClass("rad-four-column__two") }}>
+      <div {{ region_attributes.two.addClass(["rad-two-column__two", 'rad-column']) }}>
         {{ content.two }}
       </div>
-      <div {{ region_attributes.three.addClass("rad-four-column__three") }}>
-        {{ content.three }}
+      <div {{ region_attributes.bottom.addClass(["rad-two-column__bottom", 'rad-column']) }}>
+        {{ content.bottom }}
       </div>
     </div>
   </div>

@@ -36,6 +36,14 @@ four-col:
   dependencies:
     - radicati_layouts/base
 
+stacked-two-col:
+  version: 4.x
+  css:
+    theme:
+      dist/rad_layouts--stacked--two-col.css: { preprocess: false }
+  dependencies:
+    - radicati_layouts/base
+
 rad-sticky:
   version: 1.x
   css:
