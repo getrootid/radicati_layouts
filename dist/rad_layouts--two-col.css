@@ -3,14 +3,14 @@ These styles are meant to be a starting point and to be overridden in the site t
  */
 
 .rad-two-column {
-
 }
 
 /* Split width columns. */
 .rad-two-column--half_half .rad-columns__wrapper {
   display: grid;
-  grid-template-areas: "left right";
-  grid-template-columns: 1fr 1fr;
+  grid:
+    "left" auto
+    "right" auto / 1fr;
 
   .rad-two-column__left {
     grid-area: left;
@@ -27,8 +27,8 @@ These styles are meant to be a starting point and to be overridden in the site t
   display: grid;
 
   grid-template-areas:
-      "content"
-      "sidebar";
+    "content"
+    "sidebar";
 
   grid-template-columns: 1fr;
 
@@ -42,6 +42,10 @@ These styles are meant to be a starting point and to be overridden in the site t
 }
 
 @media (min-width: 768px) {
+  .rad-two-column--half_half .rad-columns__wrapper {
+    grid: "left right" auto / 1fr 1fr;
+  }
+
   .rad-two-column--left_sidebar .rad-columns__wrapper {
     grid-template-areas: "sidebar content";
     grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
@@ -64,4 +68,3 @@ These styles are meant to be a starting point and to be overridden in the site t
     grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
   }
 }
-
