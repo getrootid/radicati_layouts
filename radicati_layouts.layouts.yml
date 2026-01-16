@@ -3,7 +3,7 @@ rad_single_column:
   category: "Radicati"
   class: '\Drupal\radicati_layouts\Plugin\Layout\RadSingleColumnLayout'
   template: templates/layout--rad_single_column
-  library: radicati_layouts/one-col
+  library: radicati_layouts/one_col
   default_region: one
   icon_map:
     - ["one"]

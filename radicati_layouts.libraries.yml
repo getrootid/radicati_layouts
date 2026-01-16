@@ -4,7 +4,7 @@ base:
     theme:
       dist/rad_layouts.css: { preprocess: false }
 
-one-col:
+one_col:
   version: 4.x
   css:
     theme:
