@@ -28,8 +28,10 @@
 .layout-width--full {
   /* width: 100vw had some bugs */
   width: 100%;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+
+  /* why did we even do this? It's causing a bug. */
+  /*margin-left: calc(50% - 50vw);*/
+  /*margin-right: calc(50% - 50vw);*/
 }
 
 .layout-width--narrow {
