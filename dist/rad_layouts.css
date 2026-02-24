@@ -42,7 +42,7 @@
 }
 
 
-
+/* Testing Having these styles removed and letting the theme handle implementing the inner width on a component level */
 
 .layout-width--full.layout-inner-width--narrow > * {
   max-width: var(--rad--content-width-narrow);
