@@ -2,13 +2,13 @@ base:
   version: 4.x
   css:
     theme:
-      dist/rad_layouts.css: { preprocess: false }
+      dist/rad_layouts.css: {  }
 
 one_col:
   version: 4.x
   css:
     theme:
-      dist/rad_layouts--one-col.css: { preprocess: false }
+      dist/rad_layouts--one-col.css: {  }
   dependencies:
     - radicati_layouts/base
 
@@ -16,7 +16,7 @@ two-col:
   version: 4.x
   css:
     theme:
-      dist/rad_layouts--two-col.css: { preprocess: false }
+      dist/rad_layouts--two-col.css: {  }
   dependencies:
     - radicati_layouts/base
 
@@ -24,7 +24,7 @@ three-col:
   version: 4.x
   css:
     theme:
-      dist/rad_layouts--three-col.css: { preprocess: false }
+      dist/rad_layouts--three-col.css: {  }
   dependencies:
     - radicati_layouts/base
 
@@ -32,7 +32,7 @@ four-col:
   version: 4.x
   css:
     theme:
-      dist/rad_layouts--four-col.css: { preprocess: false }
+      dist/rad_layouts--four-col.css: {  }
   dependencies:
     - radicati_layouts/base
 
@@ -40,7 +40,7 @@ stacked-two-col:
   version: 4.x
   css:
     theme:
-      dist/rad_layouts--stacked--two-col.css: { preprocess: false }
+      dist/rad_layouts--stacked--two-col.css: {  }
   dependencies:
     - radicati_layouts/base
 
@@ -48,4 +48,4 @@ rad-sticky:
   version: 1.x
   css:
     theme:
-      dist/rad_sticky.css: { preprocess: false }
+      dist/rad_sticky.css: {  }
