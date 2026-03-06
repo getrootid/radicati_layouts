@@ -1,8 +1,10 @@
 {% if content %}
   {% set classes = [
+    "rad-layout",
     "rad-single-column",
     settings.layout_width,
     settings.layout_inner_width,
+    settings.layout_margins
   ] %}
 
   {% if settings.layout_classes is not empty %}

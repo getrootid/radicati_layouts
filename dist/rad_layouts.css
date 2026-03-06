@@ -3,7 +3,11 @@
   --rad--content-width-narrow: 50rem;
   --rad--content-width-normal: 55rem;
   --rad--content-width-wide: 60rem;
+  --layout-block-margins: 0;
+}
 
+.rad-layout {
+  margin-block: var(--layout-block-margins);
 }
 
 .rad-columns__wrapper--has-grid-gaps {
@@ -41,6 +45,18 @@
   margin-right: calc(50% - var(--rad--content-width-narrow) / 2);
 }
 
+
+.layout-margins--small {
+  --layout-block-margins: 1rem;
+}
+
+.layout-margins--normal {
+  --layout-block-margins: 2rem;
+}
+
+.layout-margins--large {
+  --layout-block-margins: 3rem;
+}
 
 /* Testing Having these styles removed and letting the theme handle implementing the inner width on a component level */
 

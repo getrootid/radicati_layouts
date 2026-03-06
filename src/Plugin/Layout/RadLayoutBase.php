@@ -19,6 +19,7 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
       'layout_inner_width' => '',
       //'layout_background' => '',
       'has_grid_gaps' => TRUE,
+      'layout_margins' => '',
     ];
   }
 
@@ -69,26 +70,19 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
       '#weight' => -15,
     ];
 
-//    if(!empty($background_term)) {
-//      $background_term = reset($background_term);
-//      $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $background_term->id(), NULL, TRUE);
-//      $backgrounds = [];
-//      foreach ($terms as $term) {
-//        $key = $term->get('field_setting_class')->value;
-//        if(!empty($key)) {
-//          $backgrounds[$key] = $term->name->value;
-//        }
-//      }
-//
-//      $form['layout_background'] = [
-//        '#type' => 'radios',
-//        '#title' => $this->t('Background'),
-//        '#description' => $this->t('What background should this layout have?'),
-//        '#default_value' => $configuration['layout_background'],
-//        '#options' => $backgrounds,
-//        '#weight' => -10,
-//      ];
-//    }
+    $form['layout_margins'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Layout Margins'),
+      '#description' => $this->t('Margins for this section.'),
+      '#default_value' => $configuration['layout_margins'],
+      '#options' => [
+        '' => $this->t('None'),
+        'layout-margins--small' => $this->t('Small'),
+        'layout-margins--normal' => $this->t('Normal'),
+        'layout-margins--large' => $this->t('Large'),
+      ],
+      '#weight' => -10,
+    ];
 
 
     $form['has_grid_gaps'] = [
@@ -127,7 +121,7 @@ abstract class RadLayoutBase extends LayoutDefault implements PluginFormInterfac
     $this->configuration['layout_width'] = $form_state->getValue('layout_width');
     $this->configuration['layout_inner_width'] = $form_state->getValue('layout_inner_width');
     $this->configuration['has_grid_gaps'] = $form_state->getValue('has_grid_gaps');
-    //$this->configuration['layout_background'] = $form_state->getValue('layout_background');
+    $this->configuration['layout_margins'] = $form_state->getValue('layout_margins');
   }
 
   public function spaceSeparate($string)

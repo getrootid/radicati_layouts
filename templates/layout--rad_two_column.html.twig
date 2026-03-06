@@ -1,9 +1,11 @@
 {% if content %}
   {% set classes = [
+    "rad-layout",
     "rad-two-column",
     settings.layout_width,
     settings.layout_inner_width,
     "rad-two-column--" ~ settings.layout_type,
+    settings.layout_margins
   ] %}
 
   {% if settings.layout_classes is not empty %}
